@@ -1,6 +1,8 @@
-package com.example.todayinformation;
+package com.example.todayinformation.base;
 
 import android.os.Bundle;
+
+import com.example.todayinformation.mvp.view.LifeCircleMvpActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
  * Created by michael Su
  * on 2021/1/12
  */
-public abstract class BaseActivity<T extends ViewBinding>  extends AppCompatActivity {
+public abstract class BaseActivity<T extends ViewBinding>  extends LifeCircleMvpActivity {
     public T viewBinding;
     @Override
     protected void onCreate( @Nullable Bundle savedInstanceState ) {
@@ -18,6 +20,7 @@ public abstract class BaseActivity<T extends ViewBinding>  extends AppCompatActi
         viewBinding=getViewBinding();
         setContentView(viewBinding.getRoot());
         initData();
+        initListener();
     }
 
     @Override
@@ -28,4 +31,5 @@ public abstract class BaseActivity<T extends ViewBinding>  extends AppCompatActi
 
     public abstract T getViewBinding();
     protected abstract void initData();
+    protected abstract void initListener();
 }

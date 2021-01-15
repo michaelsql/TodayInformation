@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <com.example.todayinformation.FullScreenVideoView
+    tools:context=".main.MainActivity">
+    <com.example.todayinformation.splash.FullScreenVideoView
         android:id="@+id/vw_play"
-        style="@style/video_view_style"></com.example.todayinformation.FullScreenVideoView>
+        style="@style/video_view_style"></com.example.todayinformation.splash.FullScreenVideoView>
     <TextView
         android:id="@+id/tv_splash_timer"
         android:layout_gravity="right"
